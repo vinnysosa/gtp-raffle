@@ -2,27 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <title>GTP 17U Tailgate Raffle</title>
-  <style>
-    html, body { margin:0; height:100%; background:#14131a; }
-    #app { display:block; border:0; width:100%; height:100%; height:100dvh; }
-  </style>
+  <script>
+    window.location.replace('../fund-raiser/' + window.location.search + window.location.hash);
+  </script>
+  <meta http-equiv="refresh" content="0; url=../fund-raiser/">
 </head>
 <body>
-  <iframe id="app" title="GTP 17U Tailgate Raffle"
-    allow="clipboard-read; clipboard-write"></iframe>
-  <script>
-    // Apps Script only draws the "created by a Google Apps Script user" banner when /exec is
-    // the top document, so the raffle is always loaded through this frame instead.
-    var EXEC_URL = 'https://script.google.com/macros/s/AKfycbwzhSiuuQmQEFOXdd960t3LFL2wfVmAYwnXeYmQQWfeHRUodcmDSrXhov7GMswQPmtd/exec';
-    var jersey = (new URLSearchParams(window.location.search).get('n') || '').trim();
-    // Only a jersey number is forwarded. Framing a caller-supplied URL would let a phishing
-    // link render any page under this domain.
-    document.getElementById('app').src = /^[0-9]{1,2}$/.test(jersey)
-      ? EXEC_URL + '?n=' + encodeURIComponent(jersey)
-      : EXEC_URL;
-  </script>
+  <p><a href="../fund-raiser/">Continue to the GTP 17U fundraiser</a></p>
 </body>
 </html>
